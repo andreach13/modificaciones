@@ -16,7 +16,7 @@ namespace BL.Entregas
             ListadeClientes = new BindingList<Clientes>();
 
             var cliente1 = new Clientes();
-            cliente1.CodigoCliente = "SPS001";
+            cliente1.CodigoCliente = 001;
             cliente1.RTN = "0908999636134";
             cliente1.NombredeEmpresa = "Repuestos y Mas";
             cliente1.Direccion = "Barrio Suyapa, 9 clle, 10 Ave";
@@ -27,7 +27,7 @@ namespace BL.Entregas
             ListadeClientes.Add(cliente1);
 
             var cliente2 = new Clientes();
-            cliente2.CodigoCliente = "SPS002";
+            cliente2.CodigoCliente = 002;
             cliente2.RTN = "08015269471313";
             cliente2.NombredeEmpresa = "Comercializadora de Productos";
             cliente2.Direccion = "Colonia Las Mercedes, casa 20";
@@ -37,17 +37,89 @@ namespace BL.Entregas
 
             ListadeClientes.Add(cliente2);
 
-        }   
+        }
 
         public BindingList<Clientes> ObtenerClientes()
         {
             return ListadeClientes;
         }
+
+        //BOTONES DE GUARDAR 
+        public Resultado GuardarCliente(Clientes cliente)
+        {
+            var resultado = Validar(cliente);
+            if (resultado.Exitoso == false )
+            {
+                return resultado;
+            }
+
+            if(cliente.CodigoCliente == 0)
+            {
+                cliente.CodigoCliente = ListadeClientes.Max(item => item.CodigoCliente) + 1;
+            }
+
+            resultado.Exitoso = true;
+            return resultado;
+        }
+        // Funcion AGREGAMOS UN NUEVO CLIENTE
+        public void AgregarCliente()
+        {
+            var nuevoCliente = new Clientes();
+            ListadeClientes.Add(nuevoCliente);
+        }
+        //Funcion Eliminar 
+        public bool EliminarCliente(int id)
+        {
+            foreach (var cliente in ListadeClientes)
+            {
+                if (cliente.CodigoCliente == id)
+                {
+                    ListadeClientes.Remove(cliente);
+                    return true;
+                }
+                    
+            }
+            return false;
+        }
+
+        //VALIDACIONES DE DATOS DE CLIENTE 
+        private Resultado Validar(Clientes Cliente)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+            if (string.IsNullOrEmpty(Cliente.Contacto) == true)
+            {
+                resultado.Mensaje = "Ingrese un contacto";
+                resultado.Exitoso = false;
+            }
+            if (string.IsNullOrEmpty(Cliente.Direccion) == true)
+            {
+                resultado.Mensaje = "Ingrese una Direccion";
+                resultado.Exitoso = false;
+            }
+            if (string.IsNullOrEmpty(Cliente.RTN) == true)
+            {
+                resultado.Mensaje = "Ingrese el RTN del Cliente";
+                resultado.Exitoso = false;
+            }
+            if (string.IsNullOrEmpty(Cliente.Telefono) == true)
+            {
+                resultado.Mensaje = "Ingrese un numero telefonico";
+                resultado.Exitoso = false;
+            }
+            if (string.IsNullOrEmpty(Cliente.NombredeEmpresa) == true)
+            {
+                resultado.Mensaje = "Ingrese un nombre de la empresa";
+                resultado.Exitoso = false;
+            }
+            
+            return resultado;
+        }
     }
 
     public class Clientes //CLASE Y DEFINICION DE PROPIEDADES
     {
-        public string CodigoCliente { get; set; }
+        public int CodigoCliente { get; set; }
         public string RTN { get; set; }
         public string NombredeEmpresa { get; set; }
         public string Direccion { get; set; }
@@ -55,5 +127,12 @@ namespace BL.Entregas
         public string Contacto { get; set; }
         public bool Activo { get; set; }
 
+    }
+
+    //Funciones para Validar
+    public class Resultado
+    {
+        public bool Exitoso { get; set; }
+        public string Mensaje { get; set; }
     }
 }
