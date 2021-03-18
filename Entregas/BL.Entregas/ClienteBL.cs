@@ -26,6 +26,16 @@ namespace BL.Entregas
             return ListadeClientes;
         }
 
+        public void CancelarCambios()//
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())//
+            {
+                item.State = EntityState.Unchanged;//
+                item.Reload();//
+            }            
+
+        }
+
         //BOTONES DE GUARDAR 
         public Resultado GuardarCliente(Clientes cliente)
         {
@@ -34,13 +44,10 @@ namespace BL.Entregas
             {
                 return resultado;
             }
-
-            if(cliente.CodigoCliente == 0)
-            {
-                cliente.CodigoCliente = ListadeClientes.Max(item => item.CodigoCliente) + 1;
-            }
-
+            _contexto.SaveChanges();
+          
             resultado.Exitoso = true;
+           
             return resultado;
         }
         // Funcion AGREGAMOS UN NUEVO CLIENTE
@@ -48,15 +55,17 @@ namespace BL.Entregas
         {
             var nuevoCliente = new Clientes();
             ListadeClientes.Add(nuevoCliente);
+            
         }
         //Funcion Eliminar 
-        public bool EliminarCliente(int id)
+        public bool EliminarCliente(int Id)
         {
             foreach (var cliente in ListadeClientes)
             {
-                if (cliente.CodigoCliente == id)
+                if (cliente.Id == Id)
                 {
                     ListadeClientes.Remove(cliente);
+                    _contexto.SaveChanges();
                     return true;
                 }
                     
@@ -94,20 +103,34 @@ namespace BL.Entregas
                 resultado.Mensaje = "Ingrese un nombre de la empresa";
                 resultado.Exitoso = false;
             }
-            
+            if (Cliente.Activo != true)
+            {
+                resultado.Mensaje = "Marque la casilla de cliente como activo";
+                resultado.Exitoso = false;
+            }
+            if (Cliente.TipoId == 0)
+            {
+                resultado.Mensaje = "Especifique un Tipo";
+                resultado.Exitoso = false;
+            }
+
             return resultado;
         }
     }
 
     public class Clientes //CLASE Y DEFINICION DE PROPIEDADES
     {
-        public int CodigoCliente { get; set; }
+        public int Id { get; set; }
+        //public int CodigoCliente { get; set; }
         public string RTN { get; set; }
         public string NombredeEmpresa { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Contacto { get; set; }
         public bool Activo { get; set; }
+        public byte[] Foto { get; set; }//
+        public int TipoId { get; set; }//
+        public Tipo Tipo { get; set; }//
 
     }
 
