@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Entregas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace Entregas
 {
     public partial class FormEnvio : Form
     {
+        EntregasBL _entregas;
+        ClienteBL _clienteBL;
+
         public FormEnvio()
         {
             InitializeComponent();
+
+            _entregas = new EntregasBL();
+            listaEntregasBindingSource.DataSource = _entregas.ObtenerEntregas();
+
+            _clienteBL = new ClienteBL();
+            listadeClientesBindingSource.DataSource = _clienteBL.ObtenerClientes();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,6 +45,11 @@ namespace Entregas
             Form formFactura = new FormFactura();
             formFactura.MdiParent = this;
             formFactura.Show();
+        }
+
+        private void FormEnvio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

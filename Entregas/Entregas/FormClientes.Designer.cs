@@ -442,6 +442,7 @@
             this.tipoIdComboBox.Size = new System.Drawing.Size(160, 24);
             this.tipoIdComboBox.TabIndex = 19;
             this.tipoIdComboBox.ValueMember = "Id";
+            this.tipoIdComboBox.SelectedIndexChanged += new System.EventHandler(this.tipoIdComboBox_SelectedIndexChanged);
             // 
             // FormClientes
             // 
