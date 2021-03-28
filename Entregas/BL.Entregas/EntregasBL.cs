@@ -24,13 +24,20 @@ namespace BL.Entregas
 
 
         //BOTONES DE GUARDAR 
-        public bool GuardarEntrega(Entrega entrega)
+        public Comprobacion GuardarEntrega(Entrega entrega)
         {
+            var resultado = Validar(entrega);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
             if (entrega.Id == 0)
             {
                 entrega.Id = ListaEntregas.Max(item => item.Id)+1;
             }
-            return true;
+
+            resultado.Exitoso = true;
+            return resultado;
         }
 
 
@@ -63,27 +70,28 @@ namespace BL.Entregas
             var resultado = new Comprobacion();
             resultado.Exitoso = true;
 
-            if (entrega.Cliente.NombredeEmpresa == "")
+            if (string.IsNullOrEmpty(entrega.Cliente.NombredeEmpresa) == true)
             {
                 resultado.Mensaje = "Ingrese el nombre del remitente";
                 resultado.Exitoso = false;
             }
-            if (entrega.Cliente.Direccion == "")
+
+            if (string.IsNullOrEmpty(entrega.Cliente.Direccion) == true)
             {
                 resultado.Mensaje = "Ingrese una direccion de entrega";
                 resultado.Exitoso = false;
             }
-            if (entrega.TipoPaquete == "")
+            if (string.IsNullOrEmpty(entrega.TipoPaquete) == true)
             {
                 resultado.Mensaje = "Especifique que paquete se envía";
                 resultado.Exitoso = false;
             }
-            if (entrega.EstadodePago == "")
+            if (string.IsNullOrEmpty(entrega.EstadodePago) == true)
             {
                 resultado.Mensaje = "Especifique el estado del pago sobre el envio";
                 resultado.Exitoso = false;
             }
-            if (entrega.EstadodePago == "")
+            if (string.IsNullOrEmpty(entrega.EstadodePago) == true)
             {
                 resultado.Mensaje = "Especifique la forma de pago";
                 resultado.Exitoso = false;
