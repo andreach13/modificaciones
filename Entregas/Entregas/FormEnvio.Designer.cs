@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -68,6 +69,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -76,17 +80,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.listaEntregasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaEntregasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -94,15 +93,17 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaEntregasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
+            this.listaEntregasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listadeClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingNavigator)).BeginInit();
             this.listaEntregasBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadeClientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +112,7 @@
             this.panel1.Controls.Add(this.IDtextBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(711, 52);
+            this.panel1.Location = new System.Drawing.Point(755, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 93);
             this.panel1.TabIndex = 0;
@@ -120,6 +121,7 @@
             // 
             this.IDtextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Id", true));
             this.IDtextBox1.Location = new System.Drawing.Point(75, 44);
+            this.IDtextBox1.Multiline = true;
             this.IDtextBox1.Name = "IDtextBox1";
             this.IDtextBox1.ReadOnly = true;
             this.IDtextBox1.Size = new System.Drawing.Size(157, 22);
@@ -167,10 +169,18 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(54, 371);
+            this.panel2.Location = new System.Drawing.Point(79, 371);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 309);
             this.panel2.TabIndex = 1;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(437, 197);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(141, 24);
+            this.comboBox6.TabIndex = 20;
             // 
             // comboBox2
             // 
@@ -304,7 +314,7 @@
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(35, 79);
+            this.panel3.Location = new System.Drawing.Point(60, 79);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(323, 238);
             this.panel3.TabIndex = 2;
@@ -369,7 +379,7 @@
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.label12);
-            this.panel4.Location = new System.Drawing.Point(364, 79);
+            this.panel4.Location = new System.Drawing.Point(389, 79);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(323, 238);
             this.panel4.TabIndex = 3;
@@ -427,7 +437,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 48);
+            this.label6.Location = new System.Drawing.Point(61, 48);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 18);
             this.label6.TabIndex = 4;
@@ -437,7 +447,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(361, 48);
+            this.label7.Location = new System.Drawing.Point(386, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 20);
             this.label7.TabIndex = 5;
@@ -448,7 +458,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(37, 339);
+            this.label3.Location = new System.Drawing.Point(62, 339);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(215, 20);
             this.label3.TabIndex = 6;
@@ -464,10 +474,43 @@
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.textBox6);
             this.panel5.Controls.Add(this.label17);
-            this.panel5.Location = new System.Drawing.Point(707, 371);
+            this.panel5.Location = new System.Drawing.Point(751, 371);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(245, 299);
             this.panel5.TabIndex = 7;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(95, 104);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(102, 21);
+            this.radioButton3.TabIndex = 25;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "En Transito";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(95, 133);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(95, 21);
+            this.radioButton2.TabIndex = 24;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Entregado";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(95, 76);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(110, 21);
+            this.radioButton1.TabIndex = 23;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Por Entregar";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // textBox11
             // 
@@ -513,7 +556,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(735, 178);
+            this.button1.Location = new System.Drawing.Point(779, 178);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(194, 47);
             this.button1.TabIndex = 8;
@@ -523,7 +566,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(735, 231);
+            this.button2.Location = new System.Drawing.Point(779, 231);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 47);
             this.button2.TabIndex = 9;
@@ -532,7 +575,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(735, 284);
+            this.button3.Location = new System.Drawing.Point(779, 284);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(194, 47);
             this.button3.TabIndex = 10;
@@ -540,57 +583,12 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(95, 104);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(102, 21);
-            this.radioButton3.TabIndex = 25;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "En Transito";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(95, 133);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(95, 21);
-            this.radioButton2.TabIndex = 24;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Entregado";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(95, 76);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(110, 21);
-            this.radioButton1.TabIndex = 23;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Por Entregar";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(437, 197);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(141, 24);
-            this.comboBox6.TabIndex = 20;
-            // 
-            // listaEntregasBindingSource
-            // 
-            this.listaEntregasBindingSource.DataSource = typeof(BL.Entregas.Entregas);
-            // 
             // listaEntregasBindingNavigator
             // 
-            this.listaEntregasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.listaEntregasBindingNavigator.AddNewItem = null;
             this.listaEntregasBindingNavigator.BindingSource = this.listaEntregasBindingSource;
             this.listaEntregasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.listaEntregasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.listaEntregasBindingNavigator.DeleteItem = null;
             this.listaEntregasBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.listaEntregasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -604,7 +602,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.listaEntregasBindingNavigatorSaveItem});
+            this.listaEntregasBindingNavigatorSaveItem,
+            this.toolStripButtonCancelar});
             this.listaEntregasBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.listaEntregasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaEntregasBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -612,32 +611,37 @@
             this.listaEntregasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaEntregasBindingNavigator.Name = "listaEntregasBindingNavigator";
             this.listaEntregasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaEntregasBindingNavigator.Size = new System.Drawing.Size(978, 27);
+            this.listaEntregasBindingNavigator.Size = new System.Drawing.Size(1066, 27);
             this.listaEntregasBindingNavigator.TabIndex = 11;
             this.listaEntregasBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 26);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(132, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
             // 
             // bindingNavigatorMovePreviousItem
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 26);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(87, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 29);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -648,67 +652,71 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 26);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 29);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 26);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(95, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Siguiente";
             // 
             // bindingNavigatorMoveLastItem
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 26);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(122, 24);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 29);
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorAddNewItem
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(131, 24);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 26);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(87, 24);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // listaEntregasBindingNavigatorSaveItem
             // 
-            this.listaEntregasBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.listaEntregasBindingNavigatorSaveItem.Enabled = false;
             this.listaEntregasBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("listaEntregasBindingNavigatorSaveItem.Image")));
             this.listaEntregasBindingNavigatorSaveItem.Name = "listaEntregasBindingNavigatorSaveItem";
-            this.listaEntregasBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 26);
-            this.listaEntregasBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.listaEntregasBindingNavigatorSaveItem.Size = new System.Drawing.Size(86, 24);
+            this.listaEntregasBindingNavigatorSaveItem.Text = "Guardar";
+            this.listaEntregasBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaEntregasBindingNavigatorSaveItem_Click);
+            // 
+            // toolStripButtonCancelar
+            // 
+            this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
+            this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(90, 24);
+            this.toolStripButtonCancelar.Text = "Cancelar";
+            this.toolStripButtonCancelar.Visible = false;
+            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // listaEntregasBindingSource
+            // 
+            this.listaEntregasBindingSource.DataSource = typeof(BL.Entregas.Entrega);
             // 
             // listadeClientesBindingSource
             // 
@@ -719,7 +727,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(978, 702);
+            this.ClientSize = new System.Drawing.Size(1066, 702);
             this.Controls.Add(this.listaEntregasBindingNavigator);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -747,10 +755,10 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingNavigator)).EndInit();
             this.listaEntregasBindingNavigator.ResumeLayout(false);
             this.listaEntregasBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadeClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -824,5 +832,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton listaEntregasBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingSource listadeClientesBindingSource;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
     }
 }

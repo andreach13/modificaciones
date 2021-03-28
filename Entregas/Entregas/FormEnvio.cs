@@ -14,7 +14,7 @@ namespace Entregas
     public partial class FormEnvio : Form
     {
         EntregasBL _entregas;
-        ClienteBL _clienteBL;
+        //ClienteBL _clienteBL;
 
         public FormEnvio()
         {
@@ -23,8 +23,10 @@ namespace Entregas
             _entregas = new EntregasBL();
             listaEntregasBindingSource.DataSource = _entregas.ObtenerEntregas();
 
-            _clienteBL = new ClienteBL();
-            listadeClientesBindingSource.DataSource = _clienteBL.ObtenerClientes();
+           
+
+           // _clienteBL = new ClienteBL();
+            //listadeClientesBindingSource.DataSource = _clienteBL.ObtenerClientes();
 
         }
 
@@ -50,6 +52,75 @@ namespace Entregas
         private void FormEnvio_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            DeshabilitarHabilitarBotones(true);
+            Eliminar(0);
+        }
+
+        private void listaEntregasBindingNavigatorSaveItem_Click(object sender, EventArgs e)//GUARDAR NUEVA ENTREGA
+        {
+            listaEntregasBindingSource.EndEdit();
+            var entrega = (Entrega)listaEntregasBindingSource.Current;
+
+            var resultado = _entregas.GuardarEntrega(entrega);
+
+            if (resultado == true)
+            {
+                listaEntregasBindingSource.ResetBindings(false);
+                DeshabilitarHabilitarBotones(true);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al registrar la netrega");
+            }
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)///AGREGAR NUEVA ENTREGA
+        {
+            _entregas.AgregarEntrega();
+            listaEntregasBindingSource.MoveLast();
+
+            DeshabilitarHabilitarBotones(false);
+        }
+
+        private void DeshabilitarHabilitarBotones(bool valor)
+        {
+            bindingNavigatorMoveFirstItem.Enabled = valor;
+            bindingNavigatorMoveLastItem.Enabled = valor;
+            bindingNavigatorMovePreviousItem.Enabled = valor;
+            bindingNavigatorMoveNextItem.Enabled = valor;
+            bindingNavigatorPositionItem.Enabled = valor;
+
+            bindingNavigatorAddNewItem.Enabled = valor;
+            bindingNavigatorDeleteItem.Enabled = valor;
+            toolStripButtonCancelar.Visible = !valor;         
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (IDtextBox1.Text != "")
+            {
+                var id = Convert.ToInt32(IDtextBox1.Text);
+                Eliminar(id);
+            }
+            
+        }
+
+        private void Eliminar(int id)
+        {
+            
+            var resultado = _entregas.EliminarEntrega(id);
+            if (resultado == true)
+            {
+                listaEntregasBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al eliminar el registro");
+            }
         }
     }
 }

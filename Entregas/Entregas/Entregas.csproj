@@ -137,6 +137,7 @@
     <None Include="Properties\DataSources\BL.Entregas.Clientes.datasource" />
     <None Include="Properties\DataSources\BL.Entregas.Contexto.datasource" />
     <None Include="Properties\DataSources\BL.Entregas.DatosdeInicio.datasource" />
+    <None Include="Properties\DataSources\BL.Entregas.Entrega.datasource" />
     <None Include="Properties\DataSources\BL.Entregas.Entregas.datasource" />
     <None Include="Properties\DataSources\BL.Entregas.EntregasBL.datasource" />
     <None Include="Properties\DataSources\BL.Entregas.EntregasDetalle.datasource" />
