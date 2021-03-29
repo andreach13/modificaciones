@@ -10,7 +10,7 @@ namespace BL.Entregas
 {
     public class Contexto: DbContext
     {
-        public Contexto(): base("Clientes")
+        public Contexto(): base("Delivery")
         {
 
         }
@@ -21,7 +21,8 @@ namespace BL.Entregas
         }
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Tipo> Tipos { get; set; }//
-        
+        public DbSet<Entrega> Entregas { get; set; }
+
     }
 
 }

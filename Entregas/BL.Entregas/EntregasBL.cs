@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,16 +10,21 @@ namespace BL.Entregas
 {
     public class EntregasBL
     {
+        Contexto _contexto;
         public BindingList<Entrega> ListaEntregas { get; set; }
 
         public EntregasBL()
         {
+            _contexto = new Contexto();
             ListaEntregas = new BindingList<Entrega>();
 
         }
 
         public BindingList<Entrega> ObtenerEntregas()
         {
+            _contexto.Entregas.Load();
+            ListaEntregas = _contexto.Entregas.Local.ToBindingList();
+
             return ListaEntregas;
         }
 
@@ -31,10 +37,7 @@ namespace BL.Entregas
             {
                 return resultado;
             }
-            if (entrega.Id == 0)
-            {
-                entrega.Id = ListaEntregas.Max(item => item.Id)+1;
-            }
+            _contexto.SaveChanges();
 
             resultado.Exitoso = true;
             return resultado;
@@ -59,6 +62,7 @@ namespace BL.Entregas
                 if (entrega.Id == Id)
                 {
                     ListaEntregas.Remove(entrega);
+                    _contexto.SaveChanges();
                     return true;
                 }
             }
@@ -70,17 +74,17 @@ namespace BL.Entregas
             var resultado = new Comprobacion();
             resultado.Exitoso = true;
 
-            if (string.IsNullOrEmpty(entrega.Cliente.NombredeEmpresa) == true)
-            {
-                resultado.Mensaje = "Ingrese el nombre del remitente";
-                resultado.Exitoso = false;
-            }
+            //if (string.IsNullOrEmpty(entrega.Cliente.NombredeEmpresa) == true)
+            //{
+                //resultado.Mensaje = "Ingrese el nombre del remitente";
+                //resultado.Exitoso = false;
+            //}
 
-            if (string.IsNullOrEmpty(entrega.Cliente.Direccion) == true)
-            {
-                resultado.Mensaje = "Ingrese una direccion de entrega";
-                resultado.Exitoso = false;
-            }
+            //if (string.IsNullOrEmpty(entrega.Cliente.Direccion) == true)
+            //{
+                //resultado.Mensaje = "Ingrese una direccion de entrega";
+                //resultado.Exitoso = false;
+            //}
             if (string.IsNullOrEmpty(entrega.TipoPaquete) == true)
             {
                 resultado.Mensaje = "Especifique que paquete se envía";

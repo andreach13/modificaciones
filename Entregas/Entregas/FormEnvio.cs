@@ -71,6 +71,7 @@ namespace Entregas
             {
                 listaEntregasBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Entrega generada");
             }
             else
             {
