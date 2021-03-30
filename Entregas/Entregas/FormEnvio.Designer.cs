@@ -639,6 +639,7 @@
             this.toolStripButtonCancelar});
             this.listaEntregasBindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.listaEntregasBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.listaEntregasBindingNavigator.MaximumSize = new System.Drawing.Size(200, 0);
             this.listaEntregasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaEntregasBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.listaEntregasBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
