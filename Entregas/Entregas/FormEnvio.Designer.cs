@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEnvio));
             this.panel1 = new System.Windows.Forms.Panel();
             this.IDtextBox1 = new System.Windows.Forms.TextBox();
+            this.listaEntregasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,9 +53,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.listadeClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,6 +69,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -94,17 +95,18 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaEntregasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
-            this.listaEntregasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listadeClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteIdTextBox = new System.Windows.Forms.TextBox();
+            this.clienteIdComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadeClientesBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingNavigator)).BeginInit();
             this.listaEntregasBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadeClientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,6 +128,10 @@
             this.IDtextBox1.ReadOnly = true;
             this.IDtextBox1.Size = new System.Drawing.Size(157, 22);
             this.IDtextBox1.TabIndex = 2;
+            // 
+            // listaEntregasBindingSource
+            // 
+            this.listaEntregasBindingSource.DataSource = typeof(BL.Entregas.Entrega);
             // 
             // label2
             // 
@@ -308,9 +314,9 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.comboBox5);
+            this.panel3.Controls.Add(this.clienteIdComboBox);
+            this.panel3.Controls.Add(this.clienteIdTextBox);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.comboBox4);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label8);
@@ -318,14 +324,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(323, 238);
             this.panel3.TabIndex = 2;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(101, 74);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(184, 24);
-            this.comboBox5.TabIndex = 12;
             // 
             // label9
             // 
@@ -336,14 +334,9 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Teléfono:";
             // 
-            // comboBox4
+            // listadeClientesBindingSource
             // 
-            this.comboBox4.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaEntregasBindingSource, "ClienteId", true));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(101, 20);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(184, 24);
-            this.comboBox4.TabIndex = 10;
+            this.listadeClientesBindingSource.DataSource = typeof(BL.Entregas.Clientes);
             // 
             // textBox4
             // 
@@ -388,7 +381,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(93, 69);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 22);
+            this.textBox3.Size = new System.Drawing.Size(109, 22);
             this.textBox3.TabIndex = 16;
             // 
             // textBox2
@@ -466,9 +459,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.radioButton3);
-            this.panel5.Controls.Add(this.radioButton2);
-            this.panel5.Controls.Add(this.radioButton1);
+            this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.textBox11);
             this.panel5.Controls.Add(this.label19);
             this.panel5.Controls.Add(this.label13);
@@ -479,10 +470,20 @@
             this.panel5.Size = new System.Drawing.Size(245, 299);
             this.panel5.TabIndex = 7;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.radioButton3);
+            this.panel6.Controls.Add(this.radioButton2);
+            this.panel6.Controls.Add(this.radioButton1);
+            this.panel6.Location = new System.Drawing.Point(79, 63);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(143, 113);
+            this.panel6.TabIndex = 26;
+            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(95, 104);
+            this.radioButton3.Location = new System.Drawing.Point(16, 42);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(102, 21);
             this.radioButton3.TabIndex = 25;
@@ -493,7 +494,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(95, 133);
+            this.radioButton2.Location = new System.Drawing.Point(16, 71);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(95, 21);
             this.radioButton2.TabIndex = 24;
@@ -504,7 +505,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(95, 76);
+            this.radioButton1.Location = new System.Drawing.Point(16, 14);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(110, 21);
             this.radioButton1.TabIndex = 23;
@@ -540,7 +541,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(92, 21);
+            this.textBox6.Location = new System.Drawing.Point(81, 21);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(140, 22);
             this.textBox6.TabIndex = 13;
@@ -714,13 +715,26 @@
             this.toolStripButtonCancelar.Visible = false;
             this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // listaEntregasBindingSource
+            // clienteIdTextBox
             // 
-            this.listaEntregasBindingSource.DataSource = typeof(BL.Entregas.Entrega);
+            this.clienteIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "ClienteId", true));
+            this.clienteIdTextBox.Location = new System.Drawing.Point(101, 69);
+            this.clienteIdTextBox.Name = "clienteIdTextBox";
+            this.clienteIdTextBox.Size = new System.Drawing.Size(100, 22);
+            this.clienteIdTextBox.TabIndex = 13;
             // 
-            // listadeClientesBindingSource
+            // clienteIdComboBox
             // 
-            this.listadeClientesBindingSource.DataSource = typeof(BL.Entregas.Clientes);
+            this.clienteIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaEntregasBindingSource, "ClienteId", true));
+            this.clienteIdComboBox.DataSource = this.listadeClientesBindingSource;
+            this.clienteIdComboBox.DisplayMember = "NombredeEmpresa";
+            this.clienteIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.clienteIdComboBox.FormattingEnabled = true;
+            this.clienteIdComboBox.Location = new System.Drawing.Point(101, 18);
+            this.clienteIdComboBox.Name = "clienteIdComboBox";
+            this.clienteIdComboBox.Size = new System.Drawing.Size(190, 24);
+            this.clienteIdComboBox.TabIndex = 14;
+            this.clienteIdComboBox.ValueMember = "Id";
             // 
             // FormEnvio
             // 
@@ -747,19 +761,21 @@
             this.Load += new System.EventHandler(this.FormEnvio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadeClientesBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingNavigator)).EndInit();
             this.listaEntregasBindingNavigator.ResumeLayout(false);
             this.listaEntregasBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadeClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -801,9 +817,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label18;
@@ -833,5 +847,8 @@
         private System.Windows.Forms.ToolStripButton listaEntregasBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingSource listadeClientesBindingSource;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox clienteIdTextBox;
+        private System.Windows.Forms.ComboBox clienteIdComboBox;
     }
 }

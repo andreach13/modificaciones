@@ -28,6 +28,15 @@ namespace BL.Entregas
             return ListaEntregas;
         }
 
+        public void CancelarCambios()//
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())//
+            {
+                item.State = EntityState.Unchanged;//
+                item.Reload();//
+            }
+
+        }
 
         //BOTONES DE GUARDAR 
         public Comprobacion GuardarEntrega(Entrega entrega)

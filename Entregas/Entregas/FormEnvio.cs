@@ -56,8 +56,9 @@ namespace Entregas
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            _entregas.CancelarCambios();
             DeshabilitarHabilitarBotones(true);
-            Eliminar(0);
+            
         }
 
         private void listaEntregasBindingNavigatorSaveItem_Click(object sender, EventArgs e)//GUARDAR NUEVA ENTREGA
