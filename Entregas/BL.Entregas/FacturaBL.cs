@@ -42,27 +42,40 @@ namespace BL.Entregas
             }
         }
 
-        public Resultado GuardarFactura(Factura factura)
+        public Comprobar GuardarFactura(Factura factura)
         {
             var resultado = Validar(factura);
             if (resultado.Exitoso == false)
             {
                 return resultado;
-            }
-
-            
+            }            
             _contexto.SaveChanges();
             resultado.Exitoso = true;
             return resultado;
         }
 
 
-        private Resultado Validar(Factura factura)
+        private Comprobar Validar(Factura factura)
         {
-            var resultado = new Resultado();
+            var resultado = new Comprobar();
             resultado.Exitoso = true;
 
             return resultado;
+        }
+
+        public bool AnularFactura(int id)
+        {
+            foreach (var factura in ListaFacturas)
+            {
+                if (factura.Id == id)
+                {
+                    factura.Activo = false;
+
+                    _contexto.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
         }
 
 
@@ -94,5 +107,11 @@ namespace BL.Entregas
         public int Id { get; set; }
         public int EntregaId { get; set; }
         public Entrega Delivery { get; set; }
+    }
+
+    public class Comprobar
+    {
+        public bool Exitoso { get; set; }
+        public string Mensaje { get; set; }
     }
 }

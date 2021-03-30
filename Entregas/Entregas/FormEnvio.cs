@@ -14,7 +14,7 @@ namespace Entregas
     public partial class FormEnvio : Form
     {
         EntregasBL _entregas;
-        //ClienteBL _clienteBL;
+        ClienteBL _clienteBL;
 
         public FormEnvio()
         {
@@ -25,8 +25,8 @@ namespace Entregas
 
            
 
-           // _clienteBL = new ClienteBL();
-            //listadeClientesBindingSource.DataSource = _clienteBL.ObtenerClientes();
+           _clienteBL = new ClienteBL();
+            listadeClientesBindingSource.DataSource = _clienteBL.ObtenerClientes();
 
         }
 

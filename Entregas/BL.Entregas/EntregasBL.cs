@@ -128,6 +128,12 @@ namespace BL.Entregas
         public DateTime Fecha { get; set; }
         public int ClienteId { get; set; }
         public Clientes Cliente { get; set; }
+
+        public Entrega()
+        {
+            Fecha = DateTime.Now;
+        }
+        
     }
 
     public class EntregaDetalles
