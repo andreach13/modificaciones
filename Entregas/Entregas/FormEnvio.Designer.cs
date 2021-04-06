@@ -72,10 +72,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.observacionesTextBox = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.statusRadioButton2 = new System.Windows.Forms.RadioButton();
-            this.statusRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.statusRadioButton = new System.Windows.Forms.RadioButton();
+            this.RadioButton3 = new System.Windows.Forms.RadioButton();
+            this.RadioButton2 = new System.Windows.Forms.RadioButton();
+            this.RadioButton1 = new System.Windows.Forms.RadioButton();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -105,6 +104,7 @@
             this.nombreDestTextBox = new System.Windows.Forms.TextBox();
             this.listaDeEstadoDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estadoIdComboBox = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             telefonoLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).BeginInit();
@@ -115,10 +115,10 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingNavigator)).BeginInit();
             this.listaEntregasBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaDeEstadoDePagoBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // telefonoLabel
@@ -198,7 +198,7 @@
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(190, 371);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(740, 332);
+            this.panel2.Size = new System.Drawing.Size(665, 332);
             this.panel2.TabIndex = 1;
             // 
             // pagoIdComboBox
@@ -505,8 +505,8 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.groupBox1);
             this.panel5.Controls.Add(this.observacionesTextBox);
-            this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.fechaDateTimePicker);
             this.panel5.Controls.Add(this.label19);
             this.panel5.Controls.Add(this.label13);
@@ -526,48 +526,37 @@
             this.observacionesTextBox.Size = new System.Drawing.Size(230, 80);
             this.observacionesTextBox.TabIndex = 29;
             // 
-            // panel6
+            // RadioButton3
             // 
-            this.panel6.Controls.Add(this.statusRadioButton2);
-            this.panel6.Controls.Add(this.statusRadioButton1);
-            this.panel6.Controls.Add(this.statusRadioButton);
-            this.panel6.Location = new System.Drawing.Point(79, 68);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(157, 104);
-            this.panel6.TabIndex = 26;
+            this.RadioButton3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.listaEntregasBindingSource, "Status", true));
+            this.RadioButton3.Location = new System.Drawing.Point(18, 80);
+            this.RadioButton3.Name = "RadioButton3";
+            this.RadioButton3.Size = new System.Drawing.Size(104, 24);
+            this.RadioButton3.TabIndex = 29;
+            this.RadioButton3.Text = "Entregado";
+            this.RadioButton3.UseVisualStyleBackColor = true;
             // 
-            // statusRadioButton2
+            // RadioButton2
             // 
-            this.statusRadioButton2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.listaEntregasBindingSource, "Status", true));
-            this.statusRadioButton2.Location = new System.Drawing.Point(16, 69);
-            this.statusRadioButton2.Name = "statusRadioButton2";
-            this.statusRadioButton2.Size = new System.Drawing.Size(104, 24);
-            this.statusRadioButton2.TabIndex = 29;
-            this.statusRadioButton2.TabStop = true;
-            this.statusRadioButton2.Text = "Entregado";
-            this.statusRadioButton2.UseVisualStyleBackColor = true;
+            this.RadioButton2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.listaEntregasBindingSource, "Status", true));
+            this.RadioButton2.Location = new System.Drawing.Point(18, 47);
+            this.RadioButton2.Name = "RadioButton2";
+            this.RadioButton2.Size = new System.Drawing.Size(127, 24);
+            this.RadioButton2.TabIndex = 28;
+            this.RadioButton2.Text = "En Transito";
+            this.RadioButton2.UseVisualStyleBackColor = true;
             // 
-            // statusRadioButton1
+            // RadioButton1
             // 
-            this.statusRadioButton1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.listaEntregasBindingSource, "Status", true));
-            this.statusRadioButton1.Location = new System.Drawing.Point(16, 39);
-            this.statusRadioButton1.Name = "statusRadioButton1";
-            this.statusRadioButton1.Size = new System.Drawing.Size(127, 24);
-            this.statusRadioButton1.TabIndex = 28;
-            this.statusRadioButton1.TabStop = true;
-            this.statusRadioButton1.Text = "En Transito";
-            this.statusRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // statusRadioButton
-            // 
-            this.statusRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.listaEntregasBindingSource, "Status", true));
-            this.statusRadioButton.Location = new System.Drawing.Point(16, 9);
-            this.statusRadioButton.Name = "statusRadioButton";
-            this.statusRadioButton.Size = new System.Drawing.Size(121, 24);
-            this.statusRadioButton.TabIndex = 27;
-            this.statusRadioButton.TabStop = true;
-            this.statusRadioButton.Text = "Por Entregar";
-            this.statusRadioButton.UseVisualStyleBackColor = true;
+            this.RadioButton1.Checked = true;
+            this.RadioButton1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.listaEntregasBindingSource, "Status", true));
+            this.RadioButton1.Location = new System.Drawing.Point(18, 15);
+            this.RadioButton1.Name = "RadioButton1";
+            this.RadioButton1.Size = new System.Drawing.Size(121, 24);
+            this.RadioButton1.TabIndex = 27;
+            this.RadioButton1.TabStop = true;
+            this.RadioButton1.Text = "Por Entregar";
+            this.RadioButton1.UseVisualStyleBackColor = true;
             // 
             // fechaDateTimePicker
             // 
@@ -854,6 +843,17 @@
             this.estadoIdComboBox.TabIndex = 31;
             this.estadoIdComboBox.ValueMember = "Id";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.RadioButton3);
+            this.groupBox1.Controls.Add(this.RadioButton1);
+            this.groupBox1.Controls.Add(this.RadioButton2);
+            this.groupBox1.Location = new System.Drawing.Point(67, 60);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(181, 116);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            // 
             // FormEnvio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -892,11 +892,11 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingNavigator)).EndInit();
             this.listaEntregasBindingNavigator.ResumeLayout(false);
             this.listaEntregasBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaDeEstadoDePagoBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -948,7 +948,6 @@
         private System.Windows.Forms.ToolStripButton listaEntregasBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingSource listadeClientesBindingSource;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ComboBox clienteIdComboBox;
         private System.Windows.Forms.TextBox telefonoTextBox;
         private System.Windows.Forms.TextBox direccionTextBox;
@@ -965,9 +964,9 @@
         private System.Windows.Forms.ComboBox costoComboBox;
         private System.Windows.Forms.TextBox pesoTextBox;
         private System.Windows.Forms.TextBox observacionesTextBox;
-        private System.Windows.Forms.RadioButton statusRadioButton2;
-        private System.Windows.Forms.RadioButton statusRadioButton1;
-        private System.Windows.Forms.RadioButton statusRadioButton;
+        private System.Windows.Forms.RadioButton RadioButton3;
+        private System.Windows.Forms.RadioButton RadioButton2;
+        private System.Windows.Forms.RadioButton RadioButton1;
         private System.Windows.Forms.BindingSource listaPaquetesBindingSource;
         private System.Windows.Forms.ComboBox tipoIdComboBox;
         private System.Windows.Forms.TextBox totalTextBox;
@@ -978,5 +977,6 @@
         private System.Windows.Forms.ComboBox pagoIdComboBox;
         private System.Windows.Forms.ComboBox estadoIdComboBox;
         private System.Windows.Forms.BindingSource listaDeEstadoDePagoBindingSource;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
