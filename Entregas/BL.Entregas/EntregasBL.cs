@@ -94,28 +94,26 @@ namespace BL.Entregas
                 //resultado.Mensaje = "Ingrese una direccion de entrega";
                 //resultado.Exitoso = false;
             //}
-            if (string.IsNullOrEmpty(entrega.TipoPaquete) == true)
-            {
-                resultado.Mensaje = "Especifique que paquete se envía";
-                resultado.Exitoso = false;
-            }
-            if (string.IsNullOrEmpty(entrega.EstadodePago) == true)
-            {
-                resultado.Mensaje = "Especifique el estado del pago sobre el envio";
-                resultado.Exitoso = false;
-            }
-            if (string.IsNullOrEmpty(entrega.EstadodePago) == true)
-            {
-                resultado.Mensaje = "Especifique la forma de pago";
-                resultado.Exitoso = false;
-            }
-            if (entrega.Status != true)
-            {
-                resultado.Mensaje = "Indique el status del envio";
-                resultado.Exitoso = false;
-            }
-
-
+            //if (string.IsNullOrEmpty(entrega.TipoPaquete) == true)
+            //{
+                //resultado.Mensaje = "Especifique que paquete se envía";
+                //resultado.Exitoso = false;
+            //}
+            //if (string.IsNullOrEmpty(entrega.EstadodePago) == true)
+            //{
+                //resultado.Mensaje = "Especifique el estado del pago sobre el envio";
+                //resultado.Exitoso = false;
+            //}
+            //if (string.IsNullOrEmpty(entrega.EstadodePago) == true)
+            //{
+                //resultado.Mensaje = "Especifique la forma de pago";
+                //resultado.Exitoso = false;
+            //}
+            //if (entrega.Status != true)
+            //{
+                //resultado.Mensaje = "Indique el status del envio";
+                //resultado.Exitoso = false;
+            //}
 
             return resultado;
         }
@@ -138,6 +136,9 @@ namespace BL.Entregas
 
     public class EntregaDetalles
     {
+        public string NombreDest { get; set; }
+        public string Telefono { get; set; }
+        public string Direccion { get; set; }
         public string TipoPaquete { get; set; }
         public double Peso { get; set; }
         public double Costo { get; set; }

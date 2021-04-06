@@ -128,5 +128,10 @@ namespace Entregas
                 MessageBox.Show("Ocurrió un error al eliminar el registro");
             }
         }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

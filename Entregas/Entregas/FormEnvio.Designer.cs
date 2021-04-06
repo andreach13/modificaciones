@@ -37,16 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -61,9 +53,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -72,10 +61,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -85,23 +71,37 @@
             this.listaEntregasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.listaEntregasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
-            this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.listaEntregasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
+            this.nombreDestTextBox = new System.Windows.Forms.TextBox();
+            this.telefonoTextBox1 = new System.Windows.Forms.TextBox();
+            this.direccionTextBox1 = new System.Windows.Forms.TextBox();
+            this.tipoPaqueteComboBox = new System.Windows.Forms.ComboBox();
+            this.pesoTextBox = new System.Windows.Forms.TextBox();
+            this.costoComboBox = new System.Windows.Forms.ComboBox();
+            this.subtotalTextBox = new System.Windows.Forms.TextBox();
+            this.impuestoTextBox = new System.Windows.Forms.TextBox();
+            this.totalTextBox = new System.Windows.Forms.TextBox();
+            this.formadePagoComboBox = new System.Windows.Forms.ComboBox();
+            this.estadodePagoComboBox = new System.Windows.Forms.ComboBox();
+            this.statusRadioButton = new System.Windows.Forms.RadioButton();
+            this.statusRadioButton1 = new System.Windows.Forms.RadioButton();
+            this.statusRadioButton2 = new System.Windows.Forms.RadioButton();
+            this.observacionesTextBox = new System.Windows.Forms.TextBox();
             telefonoLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).BeginInit();
@@ -173,16 +173,16 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboBox6);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.estadodePagoComboBox);
+            this.panel2.Controls.Add(this.formadePagoComboBox);
+            this.panel2.Controls.Add(this.totalTextBox);
+            this.panel2.Controls.Add(this.impuestoTextBox);
+            this.panel2.Controls.Add(this.subtotalTextBox);
+            this.panel2.Controls.Add(this.costoComboBox);
+            this.panel2.Controls.Add(this.pesoTextBox);
+            this.panel2.Controls.Add(this.tipoPaqueteComboBox);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox15);
-            this.panel2.Controls.Add(this.textBox14);
-            this.panel2.Controls.Add(this.textBox13);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.textBox12);
-            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.label21);
@@ -192,24 +192,8 @@
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(190, 371);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(620, 309);
+            this.panel2.Size = new System.Drawing.Size(656, 309);
             this.panel2.TabIndex = 1;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(437, 197);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(141, 24);
-            this.comboBox6.TabIndex = 20;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(437, 158);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(141, 24);
-            this.comboBox2.TabIndex = 18;
             // 
             // label18
             // 
@@ -228,50 +212,6 @@
             this.label11.Size = new System.Drawing.Size(112, 17);
             this.label11.TabIndex = 15;
             this.label11.Text = "Estado de pago:";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(155, 222);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(130, 22);
-            this.textBox15.TabIndex = 14;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(154, 188);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(130, 22);
-            this.textBox14.TabIndex = 13;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(155, 158);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(130, 22);
-            this.textBox13.TabIndex = 12;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(154, 94);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(131, 24);
-            this.comboBox3.TabIndex = 11;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(154, 55);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(130, 22);
-            this.textBox12.TabIndex = 10;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(154, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(184, 24);
-            this.comboBox1.TabIndex = 7;
             // 
             // label23
             // 
@@ -397,9 +337,8 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.textBox9);
+            this.panel4.Controls.Add(this.direccionTextBox1);
+            this.panel4.Controls.Add(this.telefonoTextBox1);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.label12);
@@ -407,28 +346,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(323, 238);
             this.panel4.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(93, 69);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(109, 22);
-            this.textBox3.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(93, 17);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 22);
-            this.textBox2.TabIndex = 15;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(17, 134);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(279, 62);
-            this.textBox9.TabIndex = 10;
             // 
             // label15
             // 
@@ -490,72 +407,40 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.observacionesTextBox);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.fechaDateTimePicker);
-            this.panel5.Controls.Add(this.textBox11);
             this.panel5.Controls.Add(this.label19);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label17);
             this.panel5.Location = new System.Drawing.Point(852, 371);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(253, 300);
+            this.panel5.Size = new System.Drawing.Size(285, 309);
             this.panel5.TabIndex = 7;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.radioButton3);
-            this.panel6.Controls.Add(this.radioButton2);
-            this.panel6.Controls.Add(this.radioButton1);
-            this.panel6.Location = new System.Drawing.Point(79, 63);
+            this.panel6.Controls.Add(this.statusRadioButton2);
+            this.panel6.Controls.Add(this.statusRadioButton1);
+            this.panel6.Controls.Add(this.statusRadioButton);
+            this.panel6.Location = new System.Drawing.Point(79, 68);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(143, 113);
+            this.panel6.Size = new System.Drawing.Size(157, 104);
             this.panel6.TabIndex = 26;
             // 
-            // radioButton3
+            // fechaDateTimePicker
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(16, 42);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(102, 21);
-            this.radioButton3.TabIndex = 25;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "En Transito";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(16, 71);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(95, 21);
-            this.radioButton2.TabIndex = 24;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Entregado";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(16, 14);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(110, 21);
-            this.radioButton1.TabIndex = 23;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Por Entregar";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(18, 199);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(214, 81);
-            this.textBox11.TabIndex = 15;
+            this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaEntregasBindingSource, "Fecha", true));
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(66, 23);
+            this.fechaDateTimePicker.Name = "fechaDateTimePicker";
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(166, 22);
+            this.fechaDateTimePicker.TabIndex = 13;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 179);
+            this.label19.Location = new System.Drawing.Point(15, 184);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(107, 17);
             this.label19.TabIndex = 14;
@@ -564,7 +449,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 76);
+            this.label13.Location = new System.Drawing.Point(9, 81);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 17);
             this.label13.TabIndex = 17;
@@ -645,7 +530,7 @@
             this.listaEntregasBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.listaEntregasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaEntregasBindingNavigator.Name = "listaEntregasBindingNavigator";
-            this.listaEntregasBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.listaEntregasBindingNavigator.Padding = new System.Windows.Forms.Padding(0);
             this.listaEntregasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.listaEntregasBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.listaEntregasBindingNavigator.Size = new System.Drawing.Size(152, 711);
@@ -673,6 +558,11 @@
             this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
             this.bindingNavigatorMoveFirstItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(151, 6);
+            // 
             // bindingNavigatorMovePreviousItem
             // 
             this.bindingNavigatorMovePreviousItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -699,10 +589,10 @@
             this.bindingNavigatorPositionItem.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorSeparator1
+            // toolStripSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(151, 6);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -714,6 +604,11 @@
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(121, 44);
             this.bindingNavigatorMoveNextItem.Text = "Siguiente";
             this.bindingNavigatorMoveNextItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -743,6 +638,11 @@
             this.bindingNavigatorAddNewItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(151, 6);
+            // 
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -755,6 +655,11 @@
             this.bindingNavigatorDeleteItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(151, 6);
+            // 
             // listaEntregasBindingNavigatorSaveItem
             // 
             this.listaEntregasBindingNavigatorSaveItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -765,6 +670,11 @@
             this.listaEntregasBindingNavigatorSaveItem.Text = "Guardar";
             this.listaEntregasBindingNavigatorSaveItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.listaEntregasBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaEntregasBindingNavigatorSaveItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(151, 6);
             // 
             // toolStripButtonCancelar
             // 
@@ -779,45 +689,148 @@
             this.toolStripButtonCancelar.Visible = false;
             this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // fechaDateTimePicker
+            // nombreDestTextBox
             // 
-            this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaEntregasBindingSource, "Fecha", true));
-            this.fechaDateTimePicker.Location = new System.Drawing.Point(66, 23);
-            this.fechaDateTimePicker.Name = "fechaDateTimePicker";
-            this.fechaDateTimePicker.Size = new System.Drawing.Size(166, 22);
-            this.fechaDateTimePicker.TabIndex = 13;
+            this.nombreDestTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "NombreDest", true));
+            this.nombreDestTextBox.Location = new System.Drawing.Point(609, 96);
+            this.nombreDestTextBox.Name = "nombreDestTextBox";
+            this.nombreDestTextBox.Size = new System.Drawing.Size(201, 22);
+            this.nombreDestTextBox.TabIndex = 13;
             // 
-            // toolStripSeparator1
+            // telefonoTextBox1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
+            this.telefonoTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Telefono", true));
+            this.telefonoTextBox1.Location = new System.Drawing.Point(93, 69);
+            this.telefonoTextBox1.Name = "telefonoTextBox1";
+            this.telefonoTextBox1.Size = new System.Drawing.Size(109, 22);
+            this.telefonoTextBox1.TabIndex = 17;
             // 
-            // toolStripSeparator2
+            // direccionTextBox1
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(151, 6);
+            this.direccionTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Direccion", true));
+            this.direccionTextBox1.Location = new System.Drawing.Point(17, 135);
+            this.direccionTextBox1.Multiline = true;
+            this.direccionTextBox1.Name = "direccionTextBox1";
+            this.direccionTextBox1.Size = new System.Drawing.Size(279, 62);
+            this.direccionTextBox1.TabIndex = 14;
             // 
-            // toolStripSeparator3
+            // tipoPaqueteComboBox
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(151, 6);
+            this.tipoPaqueteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "TipoPaquete", true));
+            this.tipoPaqueteComboBox.FormattingEnabled = true;
+            this.tipoPaqueteComboBox.Location = new System.Drawing.Point(155, 16);
+            this.tipoPaqueteComboBox.Name = "tipoPaqueteComboBox";
+            this.tipoPaqueteComboBox.Size = new System.Drawing.Size(183, 24);
+            this.tipoPaqueteComboBox.TabIndex = 21;
             // 
-            // toolStripSeparator4
+            // pesoTextBox
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(151, 6);
+            this.pesoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Peso", true));
+            this.pesoTextBox.Location = new System.Drawing.Point(156, 55);
+            this.pesoTextBox.Name = "pesoTextBox";
+            this.pesoTextBox.Size = new System.Drawing.Size(130, 22);
+            this.pesoTextBox.TabIndex = 22;
             // 
-            // toolStripSeparator5
+            // costoComboBox
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(151, 6);
+            this.costoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Costo", true));
+            this.costoComboBox.FormattingEnabled = true;
+            this.costoComboBox.Location = new System.Drawing.Point(154, 94);
+            this.costoComboBox.Name = "costoComboBox";
+            this.costoComboBox.Size = new System.Drawing.Size(121, 24);
+            this.costoComboBox.TabIndex = 23;
+            // 
+            // subtotalTextBox
+            // 
+            this.subtotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Subtotal", true));
+            this.subtotalTextBox.Location = new System.Drawing.Point(156, 155);
+            this.subtotalTextBox.Name = "subtotalTextBox";
+            this.subtotalTextBox.Size = new System.Drawing.Size(129, 22);
+            this.subtotalTextBox.TabIndex = 24;
+            // 
+            // impuestoTextBox
+            // 
+            this.impuestoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Impuesto", true));
+            this.impuestoTextBox.Location = new System.Drawing.Point(156, 190);
+            this.impuestoTextBox.Name = "impuestoTextBox";
+            this.impuestoTextBox.Size = new System.Drawing.Size(129, 22);
+            this.impuestoTextBox.TabIndex = 25;
+            // 
+            // totalTextBox
+            // 
+            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Total", true));
+            this.totalTextBox.Location = new System.Drawing.Point(155, 225);
+            this.totalTextBox.Name = "totalTextBox";
+            this.totalTextBox.Size = new System.Drawing.Size(131, 22);
+            this.totalTextBox.TabIndex = 26;
+            // 
+            // formadePagoComboBox
+            // 
+            this.formadePagoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "FormadePago", true));
+            this.formadePagoComboBox.FormattingEnabled = true;
+            this.formadePagoComboBox.Location = new System.Drawing.Point(437, 155);
+            this.formadePagoComboBox.Name = "formadePagoComboBox";
+            this.formadePagoComboBox.Size = new System.Drawing.Size(141, 24);
+            this.formadePagoComboBox.TabIndex = 27;
+            // 
+            // estadodePagoComboBox
+            // 
+            this.estadodePagoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "EstadodePago", true));
+            this.estadodePagoComboBox.FormattingEnabled = true;
+            this.estadodePagoComboBox.Location = new System.Drawing.Point(437, 197);
+            this.estadodePagoComboBox.Name = "estadodePagoComboBox";
+            this.estadodePagoComboBox.Size = new System.Drawing.Size(141, 24);
+            this.estadodePagoComboBox.TabIndex = 28;
+            // 
+            // statusRadioButton
+            // 
+            this.statusRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.listaEntregasBindingSource, "Status", true));
+            this.statusRadioButton.Location = new System.Drawing.Point(16, 9);
+            this.statusRadioButton.Name = "statusRadioButton";
+            this.statusRadioButton.Size = new System.Drawing.Size(121, 24);
+            this.statusRadioButton.TabIndex = 27;
+            this.statusRadioButton.TabStop = true;
+            this.statusRadioButton.Text = "Por Entregar";
+            this.statusRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // statusRadioButton1
+            // 
+            this.statusRadioButton1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.listaEntregasBindingSource, "Status", true));
+            this.statusRadioButton1.Location = new System.Drawing.Point(16, 39);
+            this.statusRadioButton1.Name = "statusRadioButton1";
+            this.statusRadioButton1.Size = new System.Drawing.Size(104, 24);
+            this.statusRadioButton1.TabIndex = 28;
+            this.statusRadioButton1.TabStop = true;
+            this.statusRadioButton1.Text = "En Transito";
+            this.statusRadioButton1.UseVisualStyleBackColor = true;
+            // 
+            // statusRadioButton2
+            // 
+            this.statusRadioButton2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.listaEntregasBindingSource, "Status", true));
+            this.statusRadioButton2.Location = new System.Drawing.Point(16, 69);
+            this.statusRadioButton2.Name = "statusRadioButton2";
+            this.statusRadioButton2.Size = new System.Drawing.Size(104, 24);
+            this.statusRadioButton2.TabIndex = 29;
+            this.statusRadioButton2.TabStop = true;
+            this.statusRadioButton2.Text = "Entregado";
+            this.statusRadioButton2.UseVisualStyleBackColor = true;
+            // 
+            // observacionesTextBox
+            // 
+            this.observacionesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Observaciones", true));
+            this.observacionesTextBox.Location = new System.Drawing.Point(18, 205);
+            this.observacionesTextBox.Multiline = true;
+            this.observacionesTextBox.Name = "observacionesTextBox";
+            this.observacionesTextBox.Size = new System.Drawing.Size(230, 80);
+            this.observacionesTextBox.TabIndex = 29;
             // 
             // FormEnvio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1148, 711);
+            this.ClientSize = new System.Drawing.Size(1149, 711);
+            this.Controls.Add(this.nombreDestTextBox);
             this.Controls.Add(this.listaEntregasBindingNavigator);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -848,7 +861,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingNavigator)).EndInit();
             this.listaEntregasBindingNavigator.ResumeLayout(false);
             this.listaEntregasBindingNavigator.PerformLayout();
@@ -866,12 +878,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
@@ -880,7 +886,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
@@ -888,22 +893,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.BindingSource listaEntregasBindingSource;
         private System.Windows.Forms.BindingNavigator listaEntregasBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
@@ -930,5 +927,20 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.TextBox nombreDestTextBox;
+        private System.Windows.Forms.TextBox telefonoTextBox1;
+        private System.Windows.Forms.TextBox direccionTextBox1;
+        private System.Windows.Forms.ComboBox estadodePagoComboBox;
+        private System.Windows.Forms.ComboBox formadePagoComboBox;
+        private System.Windows.Forms.TextBox totalTextBox;
+        private System.Windows.Forms.TextBox impuestoTextBox;
+        private System.Windows.Forms.TextBox subtotalTextBox;
+        private System.Windows.Forms.ComboBox costoComboBox;
+        private System.Windows.Forms.TextBox pesoTextBox;
+        private System.Windows.Forms.ComboBox tipoPaqueteComboBox;
+        private System.Windows.Forms.TextBox observacionesTextBox;
+        private System.Windows.Forms.RadioButton statusRadioButton2;
+        private System.Windows.Forms.RadioButton statusRadioButton1;
+        private System.Windows.Forms.RadioButton statusRadioButton;
     }
 }
