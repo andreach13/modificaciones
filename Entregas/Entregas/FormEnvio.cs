@@ -15,6 +15,9 @@ namespace Entregas
     {
         EntregasBL _entregas;
         ClienteBL _clienteBL;
+        TiposBL _tipoPaquete;
+        TiposBL _formadePagos;
+        Estado _estadoDePago;
 
         public FormEnvio()
         {
@@ -22,11 +25,22 @@ namespace Entregas
 
             _entregas = new EntregasBL();
             listaEntregasBindingSource.DataSource = _entregas.ObtenerEntregas();
-
-           
+                       
 
            _clienteBL = new ClienteBL();
             listadeClientesBindingSource.DataSource = _clienteBL.ObtenerClientes();
+            
+
+            _tipoPaquete = new TiposBL();
+            listaPaquetesBindingSource.DataSource = _tipoPaquete.ObtenerPaquete();
+
+            _formadePagos = new TiposBL();
+            listaPagosBindingSource.DataSource = _formadePagos.ObtenerFormasPago();
+
+            _estadoDePago = new Estado();
+            listaDeEstadoDePagoBindingSource.DataSource = _formadePagos.ObtenerEstadoDePago();
+            
+
 
         }
 
@@ -84,6 +98,8 @@ namespace Entregas
         {
             _entregas.AgregarEntrega();
             listaEntregasBindingSource.MoveLast();
+            telefonoTextBox.Text = "";
+            direccionTextBox.Text = "";
 
             DeshabilitarHabilitarBotones(false);
         }

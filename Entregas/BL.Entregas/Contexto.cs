@@ -24,6 +24,9 @@ namespace BL.Entregas
         public DbSet<Entrega> Entregas { get; set; }
         //public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Factura> Facturas { get; set; }
+        public DbSet<TiposPaquete> TiposPaquetes { get; set; }
+        public DbSet<FormasPago> FormasdePago { get; set; }
+        public DbSet<Estado> EstadoDePagos { get; set; }
 
     }
 

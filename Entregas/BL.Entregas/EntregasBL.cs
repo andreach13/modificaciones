@@ -126,6 +126,13 @@ namespace BL.Entregas
         public DateTime Fecha { get; set; }
         public int ClienteId { get; set; }
         public Clientes Cliente { get; set; }
+        public int TipoId { get; set; }
+        public TiposPaquete Paquete { get; set; }
+        public int PagoId { get; set; }
+        public FormasPago TipoDePago { get; set; }
+        public int EstadoId { get; set; }
+        public Estado EstadoDePago { get; set; }
+
 
         public Entrega()
         {
@@ -139,14 +146,11 @@ namespace BL.Entregas
         public string NombreDest { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
-        public string TipoPaquete { get; set; }
         public double Peso { get; set; }
         public double Costo { get; set; }
         public double Subtotal { get; set; }
         public double Impuesto { get; set; }
         public double Total { get; set; }
-        public string FormadePago { get; set; }
-        public string EstadodePago { get; set; }
         public bool Status { get; set; }
         public string Observaciones { get; set; }
     }
