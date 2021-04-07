@@ -17,7 +17,7 @@ namespace Entregas
         ClienteBL _clienteBL;
         TiposBL _tipoPaquete;
         TiposBL _formadePagos;
-        Estado _estadoDePago;
+        TiposBL _estadoDePago;
 
         public FormEnvio()
         {
@@ -37,8 +37,8 @@ namespace Entregas
             _formadePagos = new TiposBL();
             listaPagosBindingSource.DataSource = _formadePagos.ObtenerFormasPago();
 
-            _estadoDePago = new Estado();
-            listaDeEstadoDePagoBindingSource.DataSource = _formadePagos.ObtenerEstadoDePago();
+            _estadoDePago = new TiposBL();
+            listaDeEstadoDePagoBindingSource.DataSource = _estadoDePago.ObtenerEstadoDePago();
             
 
 
@@ -94,17 +94,18 @@ namespace Entregas
             }
 
 
+
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)///AGREGAR NUEVA ENTREGA
         {
+            
             _entregas.AgregarEntrega();
             listaEntregasBindingSource.MoveLast();
-            telefonoTextBox.Text = "";
-            direccionTextBox.Text = "";
-
             DeshabilitarHabilitarBotones(false);
+
         }
+                
 
         private void DeshabilitarHabilitarBotones(bool valor)
         {
@@ -148,6 +149,85 @@ namespace Entregas
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void telefonoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void costoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pesoTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+            string peso = "";
+            double tarifaBase = 45.00;
+            double tarifaAdicional1 = 2.00;
+            double tarifaAdicional2 = 1.90;
+            double tarifaAdicional3 = 1.00;
+            double tarifaAdicional4 = 0.50;
+            double costoAdicional = 0;
+            double subTotal = 0;
+            double impuesto = 0;
+            double total = 0;
+
+            peso = pesoTextBox.Text;
+            
+
+            if (pesoTextBox.Text != "")
+            {
+                double lbs = double.Parse(peso);
+                if (lbs >= 1 && lbs <= 25)
+                {
+                    tarifaBase = 45.00;
+                }
+
+                if (lbs > 25 && lbs <= 50)
+                {
+                    costoAdicional = (lbs - 25) * tarifaAdicional1;
+                }
+
+                if (lbs > 50 && lbs <= 100)
+                {
+                    costoAdicional = (lbs - 25) * tarifaAdicional2;
+                }
+
+                if (lbs > 100 && lbs <= 200)
+                {
+                    costoAdicional = (lbs - 25) * tarifaAdicional3;
+                }
+                if (lbs>200)
+                {
+                    costoAdicional = (lbs - 25) * tarifaAdicional4;
+                }
+                
+
+                costoTextBox.Text = tarifaBase.ToString();
+                costoAdicionalTextBox.Text = costoAdicional.ToString();
+
+                subTotal = costoAdicional + tarifaBase;
+                impuesto = subTotal * 0.15;
+                total = subTotal + impuesto;
+
+                subtotalTextBox.Text = subTotal.ToString();
+                impuestoTextBox.Text = impuesto.ToString();
+                totalTextBox.Text = total.ToString();
+            }
+            
+        }
+
+        private void costoAdicionalLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaEntregasBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
 
         }

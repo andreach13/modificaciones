@@ -28,6 +28,10 @@ namespace BL.Entregas
             tipoPaquete3.Paquetes = "Pequeño";
             contexto.TiposPaquetes.Add(tipoPaquete3);
 
+            var tipoPaquete5 = new TiposPaquete();
+            tipoPaquete5.Paquetes = "Extra Grande";
+            contexto.TiposPaquetes.Add(tipoPaquete5);
+
             var tipoPaquete4 = new TiposPaquete();
             tipoPaquete4.Paquetes = "Sobre";
             contexto.TiposPaquetes.Add(tipoPaquete4);

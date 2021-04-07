@@ -148,6 +148,7 @@ namespace BL.Entregas
         public string Direccion { get; set; }
         public double Peso { get; set; }
         public double Costo { get; set; }
+        public double CostoAdicional { get; set; }
         public double Subtotal { get; set; }
         public double Impuesto { get; set; }
         public double Total { get; set; }
