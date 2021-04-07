@@ -52,6 +52,18 @@ namespace BL.Entregas
             estado2.EstadodePago = "Cobro en Destino";
             contexto.EstadoDePagos.Add(estado2);
 
+            var status = new Estatus();
+            status.Status = "Por Entregar";
+            contexto.EstatusPaquete.Add(status);
+            
+            var status2 = new Estatus();
+            status2.Status = "En Tránsito";
+            contexto.EstatusPaquete.Add(status2);
+
+            var status3 = new Estatus();
+            status3.Status = "Entregado";
+            contexto.EstatusPaquete.Add(status3);
+
             base.Seed(contexto);//
         }
     }

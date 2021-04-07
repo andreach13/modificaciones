@@ -83,36 +83,68 @@ namespace BL.Entregas
             var resultado = new Comprobacion();
             resultado.Exitoso = true;
 
+            if (string.IsNullOrEmpty(entrega.NombreDest) == true)
+            {
+                resultado.Mensaje = "Ingrese el nombre de la persona que recibe el paquete";
+                resultado.Exitoso = false;
+            }
+            if (string.IsNullOrEmpty(entrega.Telefono) == true)
+            {
+                resultado.Mensaje = "Ingrese el número de contacto de la persona que recibe el paquete";
+                resultado.Exitoso = false;
+            }
+
+            if (string.IsNullOrEmpty(entrega.Direccion)==true)
+            {
+                resultado.Mensaje = "Ingrese la direcci[on a la cual se enviar[a el paquete";
+                resultado.Exitoso = false;
+            }
+            if (entrega.TipoId == 0)
+            {
+                resultado.Mensaje = "Especifique el tipo de paquete que se envía";
+                resultado.Exitoso = false;
+            }
+            if (entrega.PagoId == 0)
+            {
+                resultado.Mensaje = "Especifique el tipo de pago";
+                resultado.Exitoso = false;
+            }
+            if (entrega.EstadoId == 0)
+            {
+                resultado.Mensaje = "Especifique el estado de pago";
+                resultado.Exitoso = false;
+            }
+
             //if (string.IsNullOrEmpty(entrega.Cliente.NombredeEmpresa) == true)
             //{
-                //resultado.Mensaje = "Ingrese el nombre del remitente";
-                //resultado.Exitoso = false;
+            //resultado.Mensaje = "Ingrese el nombre del remitente";
+            //resultado.Exitoso = false;
             //}
 
             //if (string.IsNullOrEmpty(entrega.Cliente.Direccion) == true)
             //{
-                //resultado.Mensaje = "Ingrese una direccion de entrega";
-                //resultado.Exitoso = false;
+            //resultado.Mensaje = "Ingrese una direccion de entrega";
+            //resultado.Exitoso = false;
             //}
             //if (string.IsNullOrEmpty(entrega.TipoPaquete) == true)
             //{
-                //resultado.Mensaje = "Especifique que paquete se envía";
-                //resultado.Exitoso = false;
+            //resultado.Mensaje = "Especifique que paquete se envía";
+            //resultado.Exitoso = false;
             //}
             //if (string.IsNullOrEmpty(entrega.EstadodePago) == true)
             //{
-                //resultado.Mensaje = "Especifique el estado del pago sobre el envio";
-                //resultado.Exitoso = false;
+            //resultado.Mensaje = "Especifique el estado del pago sobre el envio";
+            //resultado.Exitoso = false;
             //}
             //if (string.IsNullOrEmpty(entrega.EstadodePago) == true)
             //{
-                //resultado.Mensaje = "Especifique la forma de pago";
-                //resultado.Exitoso = false;
+            //resultado.Mensaje = "Especifique la forma de pago";
+            //resultado.Exitoso = false;
             //}
             //if (entrega.Status != true)
             //{
-                //resultado.Mensaje = "Indique el status del envio";
-                //resultado.Exitoso = false;
+            //resultado.Mensaje = "Indique el status del envio";
+            //resultado.Exitoso = false;
             //}
 
             return resultado;
@@ -132,6 +164,8 @@ namespace BL.Entregas
         public FormasPago TipoDePago { get; set; }
         public int EstadoId { get; set; }
         public Estado EstadoDePago { get; set; }
+        public int StatusId { get; set; }
+        public Estatus EstadoPaquete { get; set; }
 
 
         public Entrega()
@@ -152,7 +186,6 @@ namespace BL.Entregas
         public double Subtotal { get; set; }
         public double Impuesto { get; set; }
         public double Total { get; set; }
-        public bool Status { get; set; }
         public string Observaciones { get; set; }
     }
 

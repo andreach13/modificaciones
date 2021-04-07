@@ -16,6 +16,7 @@ namespace BL.Entregas
         public BindingList<TiposPaquete> ListaPaquetes { get; set; }
         public BindingList<FormasPago> ListaPagos { get; set; }
         public BindingList<Estado> ListaDeEstadoDePago { get; set; }
+        public BindingList<Estatus> ListaStatus { get; set; }
 
         public TiposBL()
         {
@@ -24,6 +25,7 @@ namespace BL.Entregas
             ListaPaquetes = new BindingList<TiposPaquete>();
             ListaPagos = new BindingList<FormasPago>();
             ListaDeEstadoDePago = new BindingList<Estado>();
+            ListaStatus = new BindingList<Estatus>();
 
         }
 
@@ -59,6 +61,14 @@ namespace BL.Entregas
             return ListaDeEstadoDePago;
         }
 
+        public BindingList<Estatus> ObtenerStatus()
+        {
+            _contexto.EstatusPaquete.Load();
+            ListaStatus = _contexto.EstatusPaquete.Local.ToBindingList();
+
+           return ListaStatus;
+        }
+
     }
 
     public class Tipo
@@ -85,6 +95,11 @@ namespace BL.Entregas
         public string EstadodePago { get; set; }
     }
 
+    public  class Estatus
+    {
+        public int Id { get; set; }
+        public string Status { get; set; }
+    }
 
 }
 

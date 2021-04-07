@@ -27,6 +27,7 @@ namespace BL.Entregas
         public DbSet<TiposPaquete> TiposPaquetes { get; set; }
         public DbSet<FormasPago> FormasdePago { get; set; }
         public DbSet<Estado> EstadoDePagos { get; set; }
+        public DbSet<Estatus> EstatusPaquete { get; set; }
 
     }
 

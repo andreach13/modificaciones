@@ -38,11 +38,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.statusIdComboBox1 = new System.Windows.Forms.ComboBox();
+            this.listaStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estadoIdComboBox = new System.Windows.Forms.ComboBox();
+            this.listaDeEstadoDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.pagoIdComboBox = new System.Windows.Forms.ComboBox();
+            this.listaPagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.totalTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.impuestoTextBox = new System.Windows.Forms.TextBox();
@@ -51,6 +55,7 @@
             this.costoTextBox = new System.Windows.Forms.TextBox();
             this.pesoTextBox = new System.Windows.Forms.TextBox();
             this.tipoIdComboBox1 = new System.Windows.Forms.ComboBox();
+            this.listaPaquetesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label18 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -101,23 +106,21 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             this.nombreDestTextBox = new System.Windows.Forms.TextBox();
-            this.listaDeEstadoDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listaPagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listaPaquetesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             telefonoLabel = new System.Windows.Forms.Label();
             costoAdicionalLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaStatusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaDeEstadoDePagoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaPagosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaPaquetesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadeClientesBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingNavigator)).BeginInit();
             this.listaEntregasBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaDeEstadoDePagoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaPagosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaPaquetesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // telefonoLabel
@@ -137,7 +140,6 @@
             costoAdicionalLabel.Size = new System.Drawing.Size(165, 17);
             costoAdicionalLabel.TabIndex = 32;
             costoAdicionalLabel.Text = "Costo por libra Adicional:";
-            costoAdicionalLabel.Click += new System.EventHandler(this.costoAdicionalLabel_Click);
             // 
             // panel1
             // 
@@ -188,9 +190,10 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.statusIdComboBox1);
             this.panel2.Controls.Add(this.estadoIdComboBox);
             this.panel2.Controls.Add(this.fechaDateTimePicker);
-            this.panel2.Controls.Add(this.statusComboBox);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.pagoIdComboBox);
             this.panel2.Controls.Add(this.totalTextBox);
@@ -213,8 +216,34 @@
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(190, 371);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(656, 332);
+            this.panel2.Size = new System.Drawing.Size(656, 340);
             this.panel2.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(451, 137);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(168, 23);
+            this.button4.TabIndex = 34;
+            this.button4.Text = "Ver Tabla de Pesos";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // statusIdComboBox1
+            // 
+            this.statusIdComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaEntregasBindingSource, "StatusId", true));
+            this.statusIdComboBox1.DataSource = this.listaStatusBindingSource;
+            this.statusIdComboBox1.DisplayMember = "Status";
+            this.statusIdComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusIdComboBox1.FormattingEnabled = true;
+            this.statusIdComboBox1.Location = new System.Drawing.Point(155, 157);
+            this.statusIdComboBox1.Name = "statusIdComboBox1";
+            this.statusIdComboBox1.Size = new System.Drawing.Size(134, 24);
+            this.statusIdComboBox1.TabIndex = 44;
+            this.statusIdComboBox1.ValueMember = "Id";
+            // 
+            // listaStatusBindingSource
+            // 
+            this.listaStatusBindingSource.DataSource = typeof(BL.Entregas.Estatus);
             // 
             // estadoIdComboBox
             // 
@@ -225,9 +254,13 @@
             this.estadoIdComboBox.FormattingEnabled = true;
             this.estadoIdComboBox.Location = new System.Drawing.Point(155, 108);
             this.estadoIdComboBox.Name = "estadoIdComboBox";
-            this.estadoIdComboBox.Size = new System.Drawing.Size(134, 24);
+            this.estadoIdComboBox.Size = new System.Drawing.Size(145, 24);
             this.estadoIdComboBox.TabIndex = 42;
             this.estadoIdComboBox.ValueMember = "Id";
+            // 
+            // listaDeEstadoDePagoBindingSource
+            // 
+            this.listaDeEstadoDePagoBindingSource.DataSource = typeof(BL.Entregas.Estado);
             // 
             // fechaDateTimePicker
             // 
@@ -236,15 +269,7 @@
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
             this.fechaDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.fechaDateTimePicker.TabIndex = 31;
-            // 
-            // statusComboBox
-            // 
-            this.statusComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Status", true));
-            this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Location = new System.Drawing.Point(154, 153);
-            this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(135, 24);
-            this.statusComboBox.TabIndex = 32;
+            this.fechaDateTimePicker.Value = new System.DateTime(2021, 4, 7, 0, 0, 0, 0);
             // 
             // label17
             // 
@@ -267,6 +292,10 @@
             this.pagoIdComboBox.Size = new System.Drawing.Size(135, 24);
             this.pagoIdComboBox.TabIndex = 41;
             this.pagoIdComboBox.ValueMember = "Id";
+            // 
+            // listaPagosBindingSource
+            // 
+            this.listaPagosBindingSource.DataSource = typeof(BL.Entregas.FormasPago);
             // 
             // totalTextBox
             // 
@@ -339,6 +368,10 @@
             this.tipoIdComboBox1.Size = new System.Drawing.Size(135, 24);
             this.tipoIdComboBox1.TabIndex = 34;
             this.tipoIdComboBox1.ValueMember = "ID";
+            // 
+            // listaPaquetesBindingSource
+            // 
+            this.listaPaquetesBindingSource.DataSource = typeof(BL.Entregas.TiposPaquete);
             // 
             // label18
             // 
@@ -461,7 +494,6 @@
             this.telefonoTextBox.ReadOnly = true;
             this.telefonoTextBox.Size = new System.Drawing.Size(100, 22);
             this.telefonoTextBox.TabIndex = 13;
-            this.telefonoTextBox.TextChanged += new System.EventHandler(this.telefonoTextBox_TextChanged);
             // 
             // label10
             // 
@@ -576,7 +608,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(309, 332);
             this.panel5.TabIndex = 7;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // observacionesTextBox
             // 
@@ -668,7 +699,6 @@
             this.listaEntregasBindingNavigator.Size = new System.Drawing.Size(152, 723);
             this.listaEntregasBindingNavigator.TabIndex = 11;
             this.listaEntregasBindingNavigator.Text = "bindingNavigator1";
-            this.listaEntregasBindingNavigator.RefreshItems += new System.EventHandler(this.listaEntregasBindingNavigator_RefreshItems);
             // 
             // bindingNavigatorCountItem
             // 
@@ -830,18 +860,6 @@
             this.nombreDestTextBox.Size = new System.Drawing.Size(201, 22);
             this.nombreDestTextBox.TabIndex = 13;
             // 
-            // listaDeEstadoDePagoBindingSource
-            // 
-            this.listaDeEstadoDePagoBindingSource.DataSource = typeof(BL.Entregas.Estado);
-            // 
-            // listaPagosBindingSource
-            // 
-            this.listaPagosBindingSource.DataSource = typeof(BL.Entregas.FormasPago);
-            // 
-            // listaPaquetesBindingSource
-            // 
-            this.listaPaquetesBindingSource.DataSource = typeof(BL.Entregas.TiposPaquete);
-            // 
             // FormEnvio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -871,6 +889,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaStatusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaDeEstadoDePagoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaPagosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaPaquetesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadeClientesBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -881,9 +903,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaEntregasBindingNavigator)).EndInit();
             this.listaEntregasBindingNavigator.ResumeLayout(false);
             this.listaEntregasBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaDeEstadoDePagoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaPagosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaPaquetesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -958,10 +977,12 @@
         private System.Windows.Forms.ComboBox estadoIdComboBox;
         private System.Windows.Forms.ComboBox pagoIdComboBox;
         private System.Windows.Forms.TextBox observacionesTextBox;
-        private System.Windows.Forms.ComboBox statusComboBox;
         private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
         private System.Windows.Forms.BindingSource listaDeEstadoDePagoBindingSource;
         private System.Windows.Forms.BindingSource listaPagosBindingSource;
         private System.Windows.Forms.BindingSource listaPaquetesBindingSource;
+        private System.Windows.Forms.BindingSource listaStatusBindingSource;
+        private System.Windows.Forms.ComboBox statusIdComboBox1;
+        private System.Windows.Forms.Button button4;
     }
 }

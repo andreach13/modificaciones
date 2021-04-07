@@ -18,6 +18,7 @@ namespace Entregas
         TiposBL _tipoPaquete;
         TiposBL _formadePagos;
         TiposBL _estadoDePago;
+        TiposBL _status;
 
         public FormEnvio()
         {
@@ -39,8 +40,9 @@ namespace Entregas
 
             _estadoDePago = new TiposBL();
             listaDeEstadoDePagoBindingSource.DataSource = _estadoDePago.ObtenerEstadoDePago();
-            
 
+            _status = new TiposBL();
+            listaStatusBindingSource.DataSource = _status.ObtenerStatus();       
 
         }
 
@@ -104,6 +106,12 @@ namespace Entregas
             listaEntregasBindingSource.MoveLast();
             DeshabilitarHabilitarBotones(false);
 
+            costoTextBox.Clear();
+            costoAdicionalTextBox.Clear();
+            subtotalTextBox.Clear();
+            impuestoTextBox.Clear();
+            totalTextBox.Clear();
+            
         }
                 
 
@@ -148,21 +156,7 @@ namespace Entregas
             }
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void telefonoTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         
-        private void costoTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void pesoTextBox_TextChanged_1(object sender, EventArgs e)
         {
@@ -173,10 +167,8 @@ namespace Entregas
             double tarifaAdicional3 = 1.00;
             double tarifaAdicional4 = 0.50;
             double costoAdicional = 0;
-            double subTotal = 0;
-            double impuesto = 0;
-            double total = 0;
-
+            
+            
             peso = pesoTextBox.Text;
             
 
@@ -206,30 +198,24 @@ namespace Entregas
                 {
                     costoAdicional = (lbs - 25) * tarifaAdicional4;
                 }
+
+                var entrega = (Entrega)listaEntregasBindingSource.Current;
+                entrega.Costo = double.Parse(tarifaBase.ToString());
+                entrega.CostoAdicional = double.Parse(costoAdicional.ToString());
+
+                costoTextBox.Text = Math.Round(tarifaBase,2).ToString();
+                costoAdicionalTextBox.Text = Math.Round(costoAdicional,2).ToString();
+
+                entrega.Subtotal = costoAdicional + tarifaBase;
+                entrega.Impuesto = entrega.Subtotal * 0.15;
+                entrega.Total = entrega.Subtotal + entrega.Impuesto;
+
+                subtotalTextBox.Text = Math.Round(entrega.Subtotal,2).ToString();
+                impuestoTextBox.Text = Math.Round(entrega.Impuesto,2).ToString();
+                totalTextBox.Text =Math.Round(entrega.Total,2).ToString();
                 
-
-                costoTextBox.Text = tarifaBase.ToString();
-                costoAdicionalTextBox.Text = costoAdicional.ToString();
-
-                subTotal = costoAdicional + tarifaBase;
-                impuesto = subTotal * 0.15;
-                total = subTotal + impuesto;
-
-                subtotalTextBox.Text = subTotal.ToString();
-                impuestoTextBox.Text = impuesto.ToString();
-                totalTextBox.Text = total.ToString();
             }
             
-        }
-
-        private void costoAdicionalLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listaEntregasBindingNavigator_RefreshItems(object sender, EventArgs e)
-        {
-
         }
     }
 }
