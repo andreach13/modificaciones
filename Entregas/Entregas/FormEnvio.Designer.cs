@@ -153,7 +153,7 @@
             // 
             // IDtextBox1
             // 
-            this.IDtextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Id", true));
+            this.IDtextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "0000"));
             this.IDtextBox1.Location = new System.Drawing.Point(75, 44);
             this.IDtextBox1.Multiline = true;
             this.IDtextBox1.Name = "IDtextBox1";
@@ -299,7 +299,7 @@
             // 
             // totalTextBox
             // 
-            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Total", true));
+            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Total", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.totalTextBox.Location = new System.Drawing.Point(493, 296);
             this.totalTextBox.Name = "totalTextBox";
             this.totalTextBox.Size = new System.Drawing.Size(100, 22);
@@ -316,7 +316,7 @@
             // 
             // impuestoTextBox
             // 
-            this.impuestoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Impuesto", true));
+            this.impuestoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Impuesto", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.impuestoTextBox.Location = new System.Drawing.Point(493, 262);
             this.impuestoTextBox.Name = "impuestoTextBox";
             this.impuestoTextBox.Size = new System.Drawing.Size(100, 22);
@@ -324,7 +324,7 @@
             // 
             // subtotalTextBox
             // 
-            this.subtotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Subtotal", true));
+            this.subtotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Subtotal", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.subtotalTextBox.Location = new System.Drawing.Point(493, 228);
             this.subtotalTextBox.Name = "subtotalTextBox";
             this.subtotalTextBox.Size = new System.Drawing.Size(100, 22);
@@ -332,7 +332,7 @@
             // 
             // costoAdicionalTextBox
             // 
-            this.costoAdicionalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "CostoAdicional", true));
+            this.costoAdicionalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "CostoAdicional", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.costoAdicionalTextBox.Location = new System.Drawing.Point(519, 94);
             this.costoAdicionalTextBox.Name = "costoAdicionalTextBox";
             this.costoAdicionalTextBox.Size = new System.Drawing.Size(100, 22);
@@ -340,9 +340,9 @@
             // 
             // costoTextBox
             // 
-            this.costoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Costo", true));
+            this.costoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaEntregasBindingSource, "Costo", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.costoTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.costoTextBox.Location = new System.Drawing.Point(519, 66);
+            this.costoTextBox.Location = new System.Drawing.Point(519, 65);
             this.costoTextBox.Name = "costoTextBox";
             this.costoTextBox.Size = new System.Drawing.Size(100, 22);
             this.costoTextBox.TabIndex = 36;

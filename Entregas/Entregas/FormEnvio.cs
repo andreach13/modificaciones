@@ -100,8 +100,7 @@ namespace Entregas
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)///AGREGAR NUEVA ENTREGA
-        {
-            
+        {            
             _entregas.AgregarEntrega();
             listaEntregasBindingSource.MoveLast();
             DeshabilitarHabilitarBotones(false);

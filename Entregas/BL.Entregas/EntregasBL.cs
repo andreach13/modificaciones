@@ -83,6 +83,14 @@ namespace BL.Entregas
             var resultado = new Comprobacion();
             resultado.Exitoso = true;
 
+            if (entrega == null)
+            {
+                resultado.Mensaje = "Agregue una entrega válida";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
             if (string.IsNullOrEmpty(entrega.NombreDest) == true)
             {
                 resultado.Mensaje = "Ingrese el nombre de la persona que recibe el paquete";
@@ -114,6 +122,7 @@ namespace BL.Entregas
                 resultado.Mensaje = "Especifique el estado de pago";
                 resultado.Exitoso = false;
             }
+            
 
             //if (string.IsNullOrEmpty(entrega.Cliente.NombredeEmpresa) == true)
             //{

@@ -163,6 +163,16 @@ namespace Entregas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Prohibido {
+            get {
+                object obj = ResourceManager.GetObject("Prohibido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap repartidor {
             get {
                 object obj = ResourceManager.GetObject("repartidor", resourceCulture);

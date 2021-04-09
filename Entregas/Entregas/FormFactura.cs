@@ -31,7 +31,9 @@ namespace Entregas
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             _facturaBL.AgregarFactura();
-            listaEntregasBindingSource.MoveLast();
+            listaFacturasBindingSource.MoveLast();
+            //facturaDetalleDataGridView.ClearSelection();
+
             DeshabilitarHabilitarBotones(false);
         }
 
@@ -67,6 +69,9 @@ namespace Entregas
             }
         }
 
+
+        
+
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
             _facturaBL.CancelarCambios();
@@ -74,7 +79,7 @@ namespace Entregas
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {        
+        {
             if (idTextBox.Text != "")
             {
                 var resultado = MessageBox.Show("Desea anular esta factura?", "Anular", MessageBoxButtons.YesNo);
@@ -96,6 +101,57 @@ namespace Entregas
             else
             {
                 MessageBox.Show("Ocurrio un error al anular la factura");
+            }
+        }
+
+        private void listaFacturasBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var factura = (Factura)listaFacturasBindingSource.Current;
+            _facturaBL.AgregarFacturaDetalle(factura);
+            DeshabilitarHabilitarBotones(false);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var factura = (Factura)listaFacturasBindingSource.Current;
+            var facturaDetalle = (FacturaDetalle)facturaDetalleBindingSource.Current;
+            _facturaBL.RemoverFacturaDetalle(factura, facturaDetalle);
+            
+                DeshabilitarHabilitarBotones(false);
+        }
+
+        private void facturaDetalleDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
+
+        private void facturaDetalleDataGridView_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
+
+        private void facturaDetalleDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var factura = (Factura)listaFacturasBindingSource.Current;
+            _facturaBL.CalcularFactura(factura);
+            listaFacturasBindingSource.ResetBindings(false);
+        }
+
+        private void listaFacturasBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var factura = (Factura)listaFacturasBindingSource.Current;
+            if (factura != null && factura.Id !=0 && factura.Activo == false)
+            {
+                label1.Visible = true;
+            }
+            else
+            {
+                label1.Visible = false;
             }
         }
     }

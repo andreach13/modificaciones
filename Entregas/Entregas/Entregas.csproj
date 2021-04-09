@@ -214,6 +214,9 @@
   <ItemGroup>
     <None Include="cajas.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Prohibido.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
