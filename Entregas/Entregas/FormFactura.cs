@@ -69,7 +69,11 @@ namespace Entregas
             }
         }
 
+        public void MarcarFacturado(int id)
+        {
+            
 
+        }
         
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
@@ -103,6 +107,8 @@ namespace Entregas
                 MessageBox.Show("Ocurrio un error al anular la factura");
             }
         }
+
+
 
         private void listaFacturasBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
@@ -153,6 +159,12 @@ namespace Entregas
             {
                 label1.Visible = false;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form formEnvio = new FormEnvio();
+            formEnvio.Show();
         }
     }
     

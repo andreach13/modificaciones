@@ -606,7 +606,7 @@
             this.panel5.Controls.Add(this.label19);
             this.panel5.Location = new System.Drawing.Point(852, 371);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(309, 332);
+            this.panel5.Size = new System.Drawing.Size(284, 332);
             this.panel5.TabIndex = 7;
             // 
             // observacionesTextBox
@@ -615,7 +615,7 @@
             this.observacionesTextBox.Location = new System.Drawing.Point(28, 138);
             this.observacionesTextBox.Multiline = true;
             this.observacionesTextBox.Name = "observacionesTextBox";
-            this.observacionesTextBox.Size = new System.Drawing.Size(265, 87);
+            this.observacionesTextBox.Size = new System.Drawing.Size(234, 87);
             this.observacionesTextBox.TabIndex = 33;
             // 
             // label19
@@ -866,7 +866,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1209, 723);
+            this.ClientSize = new System.Drawing.Size(1158, 723);
             this.Controls.Add(this.nombreDestTextBox);
             this.Controls.Add(this.listaEntregasBindingNavigator);
             this.Controls.Add(this.button3);

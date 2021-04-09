@@ -171,7 +171,16 @@ namespace Entregas
             peso = pesoTextBox.Text;
             
 
-            if (pesoTextBox.Text != "")
+            if (pesoTextBox.Text == "")
+            {
+                costoTextBox.Clear();
+                costoAdicionalTextBox.Clear();
+                subtotalTextBox.Clear();
+                impuestoTextBox.Clear();
+                totalTextBox.Clear();
+                
+            }
+            else
             {
                 double lbs = double.Parse(peso);
                 if (lbs >= 1 && lbs <= 25)
@@ -193,7 +202,7 @@ namespace Entregas
                 {
                     costoAdicional = (lbs - 25) * tarifaAdicional3;
                 }
-                if (lbs>200)
+                if (lbs > 200)
                 {
                     costoAdicional = (lbs - 25) * tarifaAdicional4;
                 }
@@ -202,17 +211,16 @@ namespace Entregas
                 entrega.Costo = double.Parse(tarifaBase.ToString());
                 entrega.CostoAdicional = double.Parse(costoAdicional.ToString());
 
-                costoTextBox.Text = Math.Round(tarifaBase,2).ToString();
-                costoAdicionalTextBox.Text = Math.Round(costoAdicional,2).ToString();
+                costoTextBox.Text = Math.Round(tarifaBase, 2).ToString();
+                costoAdicionalTextBox.Text = Math.Round(costoAdicional, 2).ToString();
 
                 entrega.Subtotal = costoAdicional + tarifaBase;
                 entrega.Impuesto = entrega.Subtotal * 0.15;
                 entrega.Total = entrega.Subtotal + entrega.Impuesto;
 
-                subtotalTextBox.Text = Math.Round(entrega.Subtotal,2).ToString();
-                impuestoTextBox.Text = Math.Round(entrega.Impuesto,2).ToString();
-                totalTextBox.Text =Math.Round(entrega.Total,2).ToString();
-                
+                subtotalTextBox.Text = Math.Round(entrega.Subtotal, 2).ToString();
+                impuestoTextBox.Text = Math.Round(entrega.Impuesto, 2).ToString();
+                totalTextBox.Text = Math.Round(entrega.Total, 2).ToString();
             }
             
         }
