@@ -630,7 +630,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(880, 178);
+            this.button1.Location = new System.Drawing.Point(880, 195);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(194, 47);
             this.button1.TabIndex = 8;
@@ -640,7 +640,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(880, 231);
+            this.button2.Location = new System.Drawing.Point(880, 248);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 47);
             this.button2.TabIndex = 9;
@@ -649,7 +649,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(880, 284);
+            this.button3.Location = new System.Drawing.Point(880, 301);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(194, 47);
             this.button3.TabIndex = 10;
@@ -697,7 +697,7 @@
             this.listaEntregasBindingNavigator.Padding = new System.Windows.Forms.Padding(0);
             this.listaEntregasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.listaEntregasBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.listaEntregasBindingNavigator.Size = new System.Drawing.Size(152, 723);
+            this.listaEntregasBindingNavigator.Size = new System.Drawing.Size(152, 731);
             this.listaEntregasBindingNavigator.TabIndex = 11;
             this.listaEntregasBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -866,7 +866,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1158, 723);
+            this.ClientSize = new System.Drawing.Size(1158, 731);
             this.Controls.Add(this.nombreDestTextBox);
             this.Controls.Add(this.listaEntregasBindingNavigator);
             this.Controls.Add(this.button3);
