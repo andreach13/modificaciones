@@ -175,6 +175,7 @@ namespace BL.Entregas
         public Estado EstadoDePago { get; set; }
         public int StatusId { get; set; }
         public Estatus EstadoPaquete { get; set; }
+        
 
 
         public Entrega()
