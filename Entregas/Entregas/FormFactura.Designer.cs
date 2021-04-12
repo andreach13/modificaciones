@@ -119,9 +119,9 @@
             idLabel.AutoSize = true;
             idLabel.Location = new System.Drawing.Point(41, 49);
             idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(23, 17);
+            idLabel.Size = new System.Drawing.Size(134, 17);
             idLabel.TabIndex = 7;
-            idLabel.Text = "Id:";
+            idLabel.Text = "Número de Factura:";
             // 
             // impuestoLabel
             // 
@@ -320,7 +320,7 @@
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFacturasBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "0000"));
-            this.idTextBox.Location = new System.Drawing.Point(117, 46);
+            this.idTextBox.Location = new System.Drawing.Point(175, 46);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(131, 22);
@@ -363,7 +363,7 @@
             this.clienteIdComboBox.DisplayMember = "NombredeEmpresa";
             this.clienteIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clienteIdComboBox.FormattingEnabled = true;
-            this.clienteIdComboBox.Location = new System.Drawing.Point(117, 88);
+            this.clienteIdComboBox.Location = new System.Drawing.Point(133, 88);
             this.clienteIdComboBox.Name = "clienteIdComboBox";
             this.clienteIdComboBox.Size = new System.Drawing.Size(173, 24);
             this.clienteIdComboBox.TabIndex = 16;
