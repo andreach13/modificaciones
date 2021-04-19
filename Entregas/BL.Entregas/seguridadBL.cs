@@ -8,15 +8,36 @@ namespace BL.Entregas
 {
     public class SeguridadBL
     {
-        public bool Acceso(string usuario, string contrasena)
+        Contexto _contexto;
+
+        public SeguridadBL()
         {
-            if (usuario == "admin" && contrasena == "1234" || usuario == "bily" && contrasena == "5678")
+            _contexto = new Contexto();
+        }
+
+
+        public Usuario Acceso(string usuario, string contrasena)//regreso un objeto tipo usuario
+        {
+            var usuarios = _contexto.Usuarios.ToList();
+
+            foreach (var usuarioDB in usuarios)
             {
-                return true;
+                if (usuario == usuarioDB.Nombre && contrasena == usuarioDB.Contrasena)
+                {
+                    return usuarioDB;
+                }
             }
 
-            return false;            
+            return null;            
         }
         
+    }
+
+    public class Usuario
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Contrasena { get; set; }
+        public string TipoUsuario { get; set; }
     }
 }

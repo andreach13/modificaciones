@@ -41,6 +41,8 @@ namespace Entregas
         {
             var formLogin = new FormLogin();
             formLogin.ShowDialog();
+
+            toolStripStatusLabel1.Text = "Usuario: " + Utils.NombreUsuario;
         }
 
         private void nuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
