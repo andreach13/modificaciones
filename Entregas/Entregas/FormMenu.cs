@@ -99,5 +99,13 @@ namespace Entregas
             formReporteClientes.MdiParent = this;
             formReporteClientes.Show();
         }
+
+        private void administracionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formUsurios = new FormUsuarios();
+            formUsurios.MdiParent = this;
+            formUsurios.Show();
+      
+        }
     }
 }
