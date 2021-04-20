@@ -66,6 +66,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.listaTiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoIdComboBox = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             activoLabel = new System.Windows.Forms.Label();
             codigoClienteLabel = new System.Windows.Forms.Label();
             contactoLabel = new System.Windows.Forms.Label();
@@ -390,7 +392,7 @@
             // 
             this.fotoPictureBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listadeClientesBindingSource, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.fotoPictureBox.Location = new System.Drawing.Point(639, 31);
+            this.fotoPictureBox.Location = new System.Drawing.Point(640, 89);
             this.fotoPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.fotoPictureBox.Name = "fotoPictureBox";
             this.fotoPictureBox.Size = new System.Drawing.Size(333, 180);
@@ -401,7 +403,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(658, 275);
+            this.button1.Location = new System.Drawing.Point(659, 333);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 27);
@@ -412,7 +414,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(855, 274);
+            this.button2.Location = new System.Drawing.Point(856, 332);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 28);
@@ -444,6 +446,23 @@
             this.tipoIdComboBox.ValueMember = "Id";
             this.tipoIdComboBox.SelectedIndexChanged += new System.EventHandler(this.tipoIdComboBox_SelectedIndexChanged);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(640, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(163, 22);
+            this.textBox1.TabIndex = 20;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(810, 37);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 23);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -453,6 +472,8 @@
             this.BackgroundImage = global::Entregas.Properties.Resources.istockphoto_637864518_170667a;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1010, 409);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(tipoIdLabel);
             this.Controls.Add(this.tipoIdComboBox);
             this.Controls.Add(this.button2);
@@ -521,5 +542,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.BindingSource listaTiposBindingSource;
         private System.Windows.Forms.ComboBox tipoIdComboBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
     }
 }
