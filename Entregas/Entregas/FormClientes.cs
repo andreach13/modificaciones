@@ -174,18 +174,6 @@ namespace Entregas
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            var buscar = textBox1.Text;
-            if (String.IsNullOrEmpty(buscar) == true)
-            {
-                listadeClientesBindingSource.DataSource = _clientes.ObtenerClientes();
-            }
-            else
-            {
-                listadeClientesBindingSource.DataSource = _clientes.ObtenerClientes(buscar);
-            }
-            listadeClientesBindingSource.ResetBindings(false);
-        }
+       
     }
 }
